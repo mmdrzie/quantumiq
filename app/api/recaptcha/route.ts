@@ -1,43 +1,41 @@
 // app/api/recaptcha/route.ts
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    // دریافت توکن از بدنه درخواست
     const { token } = await request.json();
 
-    // ارسال توکن به سرویس گوگل برای اعتبارسنجی
+    // Check if reCAPTCHA secret key is available
+    if (!process.env.RECAPTCHA_SECRET_KEY) {
+      console.error("Missing reCAPTCHA secret key");
+      return NextResponse.json({ success: false, message: "Server misconfiguration" }, { status: 500 });
+    }
+
+    // Verify reCAPTCHA token with Google
     const response = await fetch(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-      { method: 'POST' }
+      { method: "POST" }
     );
 
     const data = await response.json();
 
-    // بررسی پاسخ گوگل
+    // If Google reCAPTCHA validation fails
     if (!data.success) {
-      return NextResponse.json(
-        
-        { status: 400 }
-      );
+      console.warn("reCAPTCHA validation failed:", data);
+      return NextResponse.json({ success: false, message: "reCAPTCHA validation failed" }, { status: 400 });
     }
 
-    // بررسی نمره امنیتی (اختیاری)
-    if (data.score < 0.5) { // نمره کمتر از 0.5 = احتمال اسپم
-      return NextResponse.json(
-        
-        { status: 400 }
-      );
+    // Optional: Check reCAPTCHA score for bot detection
+    if (data.score < 0.5) {
+      console.warn("Low reCAPTCHA score detected:", data.score);
+      return NextResponse.json({ success: false, message: "Suspicious activity detected" }, { status: 400 });
     }
 
-    // اگر همه چیز اوکی بود
+    // If validation is successful
     return NextResponse.json({ success: true });
 
   } catch (error) {
-    return NextResponse.json(
-      
-      { status: 500 }
-    );
+    console.error("reCAPTCHA API Error:", error);
+    return NextResponse.json({ success: false, message: "Internal Server Error" }, { status: 500 });
   }
-  
 }
