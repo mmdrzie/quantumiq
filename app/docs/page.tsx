@@ -55,7 +55,7 @@ const Docs = () => {
                 The platform is designed for traders, 
                 institutions, and investors who seek a cutting-edge tool for market analysis and automated trading.<br /><br />
                 </p>
-              {/* comment here */}
+              
               <h1 className="text-3xl font-bold mb-4"> Core Functionalities</h1>
               <p>
                 AI Market Analysis: Uses deep learning to detect market activities.
@@ -63,9 +63,9 @@ const Docs = () => {
                 Live Market Data Integration: Real-time data processing from sources.
                 Advanced Signal System: Generates safe entry points with high accuracy.<br /><br />
                 </p>
-              {/* comment here */}
+              
               <h1 className="text-3xl font-bold mb-4"> Hybrid Models</h1>
-              {/* comment here */}
+              
               <p>
                 combination of Vision Transformers EfficientNet 
                 (CNNs with optimized scaling) or hybrid architectures ( ResNet + Transformer) 
@@ -73,12 +73,14 @@ const Docs = () => {
                 RL with Proximal Policy Optimization (PPO) to let the AI adapt to live market conditions. Tools like Ray RLlib simplify implementation.
                 Designed to act like a "UAV radar" to detect hidden market patterns.
                 Built by a team of AI technicians, market makers.<br /><br />
-              {/* comment here */}
+              
                 </p>
-              {/* comment here */}
+              
               <h1 className="text-3xl font-bold mb-4">  attention mechanisms </h1> 
               <p></p>
+              <p>
                 reduces latency and improves interpretability.<br /><br />
+                </p>
               <h1 className="text-3xl font-bold mb-4"> Optuna</h1>
               <p>
                 For hyperparameter tuning.<br /><br />

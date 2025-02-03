@@ -1,6 +1,6 @@
 'use server';
 
-// Add at the top of the file
+
 
 import { auth } from '@/lib/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -47,11 +47,12 @@ export async function authenticate(
       userId: userCredential.user.uid 
     };
 
-  } catch (error: any) {
+  } catch {
+    // ✅ Removed the unused `error` variable
     return {
       error: {
-        code: error.code || 'UNKNOWN_ERROR',
-        message: error.message || 'Account creation failed'
+        code: 'UNKNOWN_ERROR',
+        message: 'Account creation failed'
       },
       isPending: false
     };
