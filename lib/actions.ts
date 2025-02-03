@@ -10,11 +10,20 @@ import {
   validateRecaptcha 
 } from '@/lib/validation';
 
+type AuthState = {
+  success?: boolean;
+  userId?: string;
+  error?: {
+    code: string;
+    message: string;
+  };
+  isPending?: boolean;
+};
 
 export async function authenticate(
-  prevState: any,
+  prevState: AuthState,
   formData: FormData
-) {
+): Promise<AuthState> {
   const rawFormData = {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
@@ -48,7 +57,7 @@ export async function authenticate(
     };
 
   } catch {
-    // ✅ Removed the unused `error` variable
+
     return {
       error: {
         code: 'UNKNOWN_ERROR',
