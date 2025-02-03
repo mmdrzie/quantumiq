@@ -77,10 +77,13 @@ const Docs = () => {
                 </p>
               
               <h1 className="text-3xl font-bold mb-4">  attention mechanisms </h1> 
-              <p></p>
+              <p>
+
+              </p>
+              
               <p>
                 reduces latency and improves interpretability.<br /><br />
-                </p>
+              </p>
               <h1 className="text-3xl font-bold mb-4"> Optuna</h1>
               <p>
                 For hyperparameter tuning.<br /><br />
