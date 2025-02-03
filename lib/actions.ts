@@ -1,7 +1,5 @@
 'use server';
 
-
-
 import { auth } from '@/lib/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { 
@@ -21,7 +19,7 @@ type AuthState = {
 };
 
 export async function authenticate(
-  prevState: AuthState,
+  state: AuthState | undefined, // Handle `undefined` state
   formData: FormData
 ): Promise<AuthState> {
   const rawFormData = {
@@ -53,17 +51,18 @@ export async function authenticate(
 
     return { 
       success: true,
-      userId: userCredential.user.uid 
+      userId: userCredential.user.uid,
+      isPending: false, // Ensure `isPending` is included
     };
 
-  } catch {
-
+  } catch (error) {
+    console.error('Account creation failed:', error); // Log the error for debugging
     return {
       error: {
         code: 'UNKNOWN_ERROR',
-        message: 'Account creation failed'
+        message: 'Account creation failed',
       },
-      isPending: false
+      isPending: false,
     };
   }
 }
