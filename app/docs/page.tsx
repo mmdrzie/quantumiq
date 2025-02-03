@@ -54,7 +54,7 @@ const Docs = () => {
                 QuantumIQ aims to predict market activities and forecast future price movements with precision.
                 The platform is designed for traders, 
                 institutions, and investors who seek a cutting-edge tool for market analysis and automated trading.<br /><br />
-                </p>
+              </p>
               
               <h1 className="text-3xl font-bold mb-4"> Core Functionalities</h1>
               <p>
@@ -62,7 +62,7 @@ const Docs = () => {
                 Automated Trading: AI-powered execution of trades based on precise signals.
                 Live Market Data Integration: Real-time data processing from sources.
                 Advanced Signal System: Generates safe entry points with high accuracy.<br /><br />
-                </p>
+              </p>
               
               <h1 className="text-3xl font-bold mb-4"> Hybrid Models</h1>
               
@@ -74,15 +74,11 @@ const Docs = () => {
                 Designed to act like a "UAV radar" to detect hidden market patterns.
                 Built by a team of AI technicians, market makers.<br /><br />
               
-                </p>
+              </p>
               
               <h1 className="text-3xl font-bold mb-4">  attention mechanisms </h1> 
               <p>
-
-              </p>
-              
-              <p>
-                reduces latency and improves interpretability.<br /><br />
+               reduces latency and improves interpretability.<br /><br />
               </p>
               <h1 className="text-3xl font-bold mb-4"> Optuna</h1>
               <p>
@@ -98,7 +94,7 @@ const Docs = () => {
 
                The project is structured into several phases, including
                research, AI training, real-time testing, and public release. <br /><br />
-               </p>
+              </p>
               <h1 className="text-3xl font-bold mb-4">Phase 1: Research & Planning</h1>
               <p>
               
@@ -109,7 +105,7 @@ const Docs = () => {
                Plan project architecture and data requirements.
 
                Establish privacy and security measures.<br /><br />
-               </p>
+              </p>
               <h1 className="text-3xl font-bold mb-4">Phase 2: AI Model Training & Testing</h1>
               <p>
                Train AI models using historical market data.
@@ -121,7 +117,7 @@ const Docs = () => {
                Implement feature engineering for market prediction.
 
                Evaluate AI performance on real-time market scenarios.<br /><br />
-               </p>
+              </p>
 
               <h1 className="text-3xl font-bold mb-4">Phase 2.5: Model Optimization</h1>
               <p>
@@ -129,14 +125,14 @@ const Docs = () => {
                Quantize models with TensorRT for GPU acceleration.
 
                Implement model distillation to reduce size without losing accuracy.<br /><br />
-               </p>
+              </p>
               <h1 className="text-3xl font-bold mb-4">Phase 3.5: Institutional Tools</h1>
               <p>
 
                Add White Label Solutions for hedge funds to rebrand QuantumIQ.
 
                Develop a Risk Dashboard with VaR (Value at Risk) metrics.<br /><br />
-               </p>
+              </p>
               <h1 className="text-3xl font-bold mb-4">Phase 4: Real-time Market Testing</h1>
               <p>
            
@@ -147,7 +143,7 @@ const Docs = () => {
                Ensure synchronized movement of indicators when panning the chart.
 
                Optimize execution speed and trading response times.<br /><br />
-               </p>
+              </p>
 
               <h1 className="text-3xl font-bold mb-4">Phase 5: Beta Launch & User Testing</h1>
               <p>
@@ -156,7 +152,7 @@ const Docs = () => {
                Collect feedback and improve usability.
 
                Implement security audits and system hardening.<br /><br />
-               </p>
+              </p>
 
               <h1 className="text-3xl font-bold mb-4">Phase 6: Full Public Release & Regulatory Certification</h1>
               <p>
@@ -181,10 +177,7 @@ const Docs = () => {
           {selectedSection === "technology" && (
             <section>
               <h1 className="text-3xl font-bold mb-4">Technology Stack & Tools</h1>
-              
-              <p>
-              
-              </p>
+              <p></p>
               <h1 className="text-2xl font-bold mb-4">BETA AI & Machine Learning</h1>
               <p>
               
@@ -201,7 +194,7 @@ const Docs = () => {
                SHAP/LIME – Explain AI decisions to users.
 
                Ray RLlib – Reinforcement Learning for adaptive trading.<br /><br />
-               </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Data Storage & APIs</h1>
               <p>
                
@@ -212,7 +205,7 @@ const Docs = () => {
                Historical data collection.
 
                Custom Web Scrapers – Additional market insights.<br /><br />
-               </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Backend & Infrastructure</h1>
               <p>
                
@@ -229,14 +222,14 @@ const Docs = () => {
                Containerized deployment.<br /><br />
 
                
-               </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">CI/CD & Monitoring</h1>
               <p>
                
                Current: Manual Deployment
 
                Upgrade: Automated testing/deployment.<br /><br />
-               </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Advanced Market Detection</h1>
               <p>
                
@@ -258,14 +251,14 @@ const Docs = () => {
               <p>
                 The platform collects real-time market data, applies AI
                 algorithms for analysis, and provides automated trading signals.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Data Collection & Processing</h1>
               <p>
                
                 Fetches real-time and historical market data.
 
                 Processes data for trend analysis, volume movements, and order book insights.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">AI Market Analysis & Predictions</h1>
               <p>
                
@@ -274,14 +267,14 @@ const Docs = () => {
                 Predicts safe entry points based on market structure.
 
                 Warns users of potential market manipulations.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Charting & Signal Integration</h1>
               <p>
                
                 Charts automatically adapt to AI-detected signals.
 
                 Indicators remain synchronized while panning.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Automated Trading & Signal Generation</h1>
               <p>
                
@@ -302,33 +295,33 @@ const Docs = () => {
               <p>
                 Plans include multi-asset support, real-time AI learning, and
                 institutional adoption.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Scaling AI Models</h1>
               <p>
                
                 Integrate multi-model AI for increased accuracy.
 
                 Introduce real-time AI learning from market changes.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Bias Mitigation</h1>
               <p>
                
                 Audit models for overfitting to specific assets/market conditions using AI Fairness 360.<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Regulatory Safeguards</h1>
               <p>
                
                 Add circuit breakers to halt trading if AI detects anomalous behavior (e.g., 10% loss in 1 minute).
 
                 Log all trades for audit trails (required by FINRA/SEC).<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">More Trading Features</h1>
               <p>
               
                 Implement options trading AI.
 
                 Introduce multi-asset support (crypto, forex, stocks, commodities).<br /><br />
-                </p>
+              </p>
               <h1 className="text-2xl font-bold mb-4">Institutional & Retail User Adoption</h1>
               <p>
                

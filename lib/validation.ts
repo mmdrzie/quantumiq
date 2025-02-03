@@ -15,7 +15,7 @@ export function validateEmail(email: string): boolean {
         { method: 'POST' }
       );
       return await response.json();
-    } catch (error) {
+    } catch {
       return { success: false };
     }
   }
