@@ -1,7 +1,7 @@
 // app/docs/page.tsx
 'use client';
 
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@heroui/react";
 import { ArchitectureIcon, ApiIcon, QuickStartIcon } from "@/components/icons";
 
 import { useState } from "react";

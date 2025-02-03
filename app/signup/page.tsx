@@ -1,11 +1,11 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { authenticate } from '@/lib/actions';
 import { Loader2 } from 'lucide-react';
 
 export default function SignupPage() {
-  const [state, formAction] = useFormState(authenticate, undefined);
+  const [state, formAction] = useActionState(authenticate, undefined);
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gray-900">
