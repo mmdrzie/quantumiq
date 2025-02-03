@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     // بررسی پاسخ گوگل
     if (!data.success) {
       return NextResponse.json(
-        { error: 'reCAPTCHA verification failed' },
+        
         { status: 400 }
       );
     }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // بررسی نمره امنیتی (اختیاری)
     if (data.score < 0.5) { // نمره کمتر از 0.5 = احتمال اسپم
       return NextResponse.json(
-        { error: 'Low reCAPTCHA score' },
+        
         { status: 400 }
       );
     }
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
   } catch (error) {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      
       { status: 500 }
     );
   }

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import TypewriterClient from "@/components/TypewriterClient";
 import { RocketIcon, ShieldIcon, PulseIcon } from "@/components/icons";
 
@@ -10,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
       <main className="container mx-auto px-4 py-12 md:py-20">
-        {/* Logo Section */}
+        
        
 
         {/* Hero Section */}

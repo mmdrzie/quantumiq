@@ -1,8 +1,7 @@
 // app/docs/page.tsx
 'use client';
 
-import { Accordion, AccordionItem } from "@heroui/react";
-import { ArchitectureIcon, ApiIcon, QuickStartIcon } from "@/components/icons";
+
 
 import { useState } from "react";
 import { motion } from "framer-motion";
