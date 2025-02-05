@@ -9,7 +9,7 @@ import { RocketIcon, ShieldIcon, PulseIcon } from "@/components/icons";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulating login state
+  const [isLoggedIn] = useState(false); // Simulating login state
 
   return (
     <div className="relative min-h-screen">
