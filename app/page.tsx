@@ -1,15 +1,30 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, User } from "lucide-react";
 import TypewriterClient from "@/components/TypewriterClient";
 import { RocketIcon, ShieldIcon, PulseIcon } from "@/components/icons";
 
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn] = useState(false); // Simulating login state
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Ensure the video plays on mobile browsers
+      const playVideo = () => {
+        video.play().catch(err => console.log("Autoplay prevented:", err));
+      };
+
+      video.addEventListener("canplaythrough", playVideo);
+      return () => video.removeEventListener("canplaythrough", playVideo);
+    }
+  }, []);
 
   return (
     <div className="relative min-h-screen">
@@ -75,10 +90,18 @@ export default function Home() {
       </header>
 
       {/* Background Video */}
-      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+      <video
+        ref={videoRef} 
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+      >
         <source src="/background.mp4" type="video/mp4" />
-        <source src="backgroundmobile.mp4" type="video/mp4" />
-        <source src="backgroundmobile.webm" type="video/webm" />
+        <source src="/mobile.mp4" type="mobile/mp4" />
+        <source src="/mobile.webm" type="mobile/webm" />
         Your browser does not support the video tag.
       </video>
 
@@ -87,11 +110,8 @@ export default function Home() {
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-50 to-blue-500 mb-6">
             QuantumiQ
-
           </h1>
         </div>
-
-
 
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -105,7 +125,8 @@ export default function Home() {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[{
+          {[
+            {
               title: "AI Market Predictions",
               description: "Real-time analysis using transformer models",
               icon: RocketIcon,
